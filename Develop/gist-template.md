@@ -1,10 +1,10 @@
-# Title (replace with your title)
-
-Introductory paragraph (replace this with your text)
+# REGEX EMAIL VALIDATION TUTORIAL
+In this tutorial, I will be explaining the email validation regular expression, the pieces of the expression, and how they work together to check for strings of characters that fit the criteria.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+I have chosen the regular expression that checks for email adresses. The expression itself is as follows: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+The rest of the tutorial is broken into pieces, which I will walk you through step by step, explaining to the best of my ability.
 
 ## Table of Contents
 
@@ -21,24 +21,39 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
+A regular expression is a literal that searches for strings of characters that match a certain criteria. The regex must be wrapped in / characters, and everything that comes between are the components of the expression that specificy what will be searched.
 
 ### Anchors
+Anchor metacharacters specifiy position in a searched block of text. ^ specifies a string that begins with the character that follows it, and $ specifies a string that ends with the character that precedes it.
+Within the context of the find email address expression, the carat at the beginning means that we are searching for a string that begins with the criteria contained in the following square brackets. The dollar sign at the end is specifiying what the string will end with.
 
 ### Quantifiers
+Quantifiers are metacharacters that modify the criteria of the previous metacharacter. for instance, ? means 0 or 1, effectly making it an optional part of the search. * means 0 or more, basically checking for a characters existance without a specific quantity. A search of .* means any character at all will be selected.
+In the email example, each + indicates that the number of characters in the specified part of the string is irrelevant.
 
 ### OR Operator
+| is the OR operator in regex. You use it when you want to apply or logic outside of a bracket expression. 
 
 ### Character Classes
+Character classes define a set of characters.
+Literal characters are used to find a specific character, literally. You can put them in brackets to indicate that more than one character can fulfill the search. For example, [abc]. Any of those three letters will be found in the search. 
+Metacharacters do not indicate a specific character. They are used to find single characters based on criteria. For example, \w will find any letters uppercase or lowercase, and any digits 1-9. That means anything other than white space will be selected in a \w search. . will match any character except for the newline character, \m
 
 ### Flags
+Flags are the one component of a regular expression that go outside the containing slashes. g indicates that it is a global search, that the regex should bet tested against all possible matches. i indicates that the search is case insensitive. m meeans that a multi-line input string should be treated as multiple lines.
 
 ### Grouping and Capturing
+Regular expressions can be split into groups using parentheses. Grouping allows you to refer to those specific parts. Group 0 is everything, the core content expressionof the When you group part of an expression, the part of the search that that grouped section returns is "captured", and can be replaced using $
 
 ### Bracket Expressions
+The characters contained within square brackets represent a range of characters we want to match.
 
 ### Greedy and Lazy Match
+.* is greedy!
+? is a way to make it not greedy (paired with a quantifier)
 
 ### Boundaries
+/b is the word boundry metacharacter, meaning if you search \b\w{5}\b, you will be returned words that contain only five letters. 
 
 ### Back-references
 
