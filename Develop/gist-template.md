@@ -62,4 +62,4 @@ Look-ahead and look-behind are similar to the start and end of line anchors I ex
 
 ## Author
 
-My name is Connor Carciofini! I can be reached at [GITHUB]()
+My name is Connor Carciofini! I can be reached at [GITHUB](https://github.com/kingSHLERM)
