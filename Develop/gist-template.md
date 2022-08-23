@@ -43,22 +43,23 @@ Metacharacters do not indicate a specific character. They are used to find singl
 Flags are the one component of a regular expression that go outside the containing slashes. g indicates that it is a global search, that the regex should bet tested against all possible matches. i indicates that the search is case insensitive. m meeans that a multi-line input string should be treated as multiple lines.
 
 ### Grouping and Capturing
-Regular expressions can be split into groups using parentheses. Grouping allows you to refer to those specific parts. Group 0 is everything, the core content expressionof the When you group part of an expression, the part of the search that that grouped section returns is "captured", and can be replaced using $
+Regular expressions can be split into groups using parentheses. Grouping allows you to refer to those specific parts. Group 0 is the global scope of the expression, and additional groups are numbered according to their order in the expression starting from 1. When you group part of an expression, the part of the search that that grouped section returns is "captured", and can be replaced using $
 
 ### Bracket Expressions
 The characters contained within square brackets represent a range of characters we want to match.
 
 ### Greedy and Lazy Match
-.* is greedy!
-? is a way to make it not greedy (paired with a quantifier)
+Greedy and lazy matching has to do with repetition operators. Greedy is when an operator is going to try and match as many things as it possibly can. When the criteria of the search need to be more specific to return only what is needed. Lazy is when an operator is going to try and match as few things as possible. Commonly it's when the ? operator is used improperly, causing the first part of the criteria to be satisfied immediately, making the compiler fail continually trying to move onto the next step too soon.
 
 ### Boundaries
-/b is the word boundry metacharacter, meaning if you search \b\w{5}\b, you will be returned words that contain only five letters. 
+/b is the word boundry metacharacter, meaning if you search \b\w{5}\b, you will be returned words that contain only five letters. It creates boundries for the search.
 
 ### Back-references
+After you capture a group from an expression, you can reference it with it's corresponding number.
 
 ### Look-ahead and Look-behind
+Look-ahead and look-behind are similar to the start and end of line anchors I explained earlier. It lets you refer to the found value of a previous or following section of the expression
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+My name is Connor Carciofini! I can be reached at [GITHUB]()
